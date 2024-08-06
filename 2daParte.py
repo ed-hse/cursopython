@@ -419,7 +419,7 @@ ver la documentacion oficial de python. Todos los objetos tienen muchos metodos.
 
 #Funciones Leccion 60
 #Crear funciones 61
-
+'''
 def mi_funcion(nombre):
     """
     Esta es una funcion que se encarga
@@ -438,19 +438,173 @@ def saludar_persona():
 
 saludar_persona()
 saludar_persona()
-
+'''
 
 
 #Return Leccion 62
 #Podemos retornar un valor para imprimir o bien almacenar en una variable
-
+"""
 def multiplicar(numero1, numero2):
     return numero1*numero2
 
 print(multiplicar(3,4))
-resultado = multiplicar(5,10)
+resultado = multiplicar(5,10) #La funcion esta contemplada que tome valores integers y floats,
+#en un caso general: espera que el usuario introduzca el tipo de datos correcto
 
 
 print("Prueba 05/08/2024 - 11 p.m.")
 
+"""
+#Funciones dinamica Leccion 63
+"""
+def chequear_3_cifras(numero):
+    return numero in range(100,1000) #Verifique que esta dentro del rango, devuelve True o False
+
+resultado = chequear_3_cifras(658)
+print(resultado)
+
+
+def chequear_3_cifras_listas(lista): #Devuelve True o None
+    for n in lista:
+        if n in range(100,1000):
+            return True #Esta en el medio, termina la funcion con solo esta sentencia de "escape"
+        else:
+            pass
+    #return False #Si se quisiera que en lugar de None, devolviera false cuando no hay ningun elemento, se pone este return
+def chequear_3_cifras_listas_each(lista): #Devuelve todos los elementos de la lista que cumplen
+    lista_3_cifras=[]
+    for n in lista:
+        if n in range(100,1000):
+            lista_3_cifras.append(n)
+        else:
+            pass
+    return lista_3_cifras
+"""
+
+#Ejemplo de funcion Leccion 64
+"""
+precios_cafe=[("capuchino",1.5),("Expreso",1.2),("Moka",1.9)]
+for elemento in precios_cafe:
+    print(f"imprimimos la tupla: {elemento}")
+
+def cafe_mas_caro(lista_precios): #Devuelve el cafe mas caro
+    precio_mayor = 0
+    cafe_mas_caro =""
+    for cafe,precio in lista_precios:
+        if precio > precio_mayor:
+            precio_mayor=precio
+            cafe_mas_caro=cafe
+        else:
+            pass
+
+    return(cafe_mas_caro,precio_mayor)
+
+print(cafe_mas_caro(precios_cafe))
+
+cafe, precio = cafe_mas_caro(precios_cafe)
+print(f"El cafe mas caro es {cafe} cuyo precio es {precio}")
+"""
+
+#Interaccion entre Funciones Leccion 65
+#Muchas funciones interactuando entre si.
+
+
+#Eliges 1 palito, si te toca el mas corto lavas trastes.
+"""
+from random import shuffle
+
+#Lista inicial
+palitos = ["-","--","---","----"]
+#Funcion mezclar palitos
+def mezclar(lista):
+    shuffle(lista)
+    return lista
+
+
+#print(mezclar(palitos))
+#Pedirle intento 
+def probar_suerte():
+    intento=""
+    while intento not in ["1","2","3","4"]:
+        intento = input("Elige un numero del 1 al 4:")
+    return int(intento)
+
+
+#Comprobar intento
+def chequear_intento(lista,intento):
+    if lista[intento-1] == "-":
+        print("A lavar los platos")
+    else:
+        print("Esta vez te has salvado")
+    print(f"Te ha tocado {lista[intento-1]}")
+
+
+palitos_mezclados=mezclar(palitos)
+seleccion = probar_suerte()
+chequear_intento(palitos_mezclados,seleccion)
+"""
+
+#Ejercico de codificacion 
+"""
+Crea una función llamada reducir_lista() que tome una lista como argumento (crea también la variable lista_numeros), 
+y devuelva la misma lista, pero eliminando duplicados (dejando uno solo de los números si hay repetidos) y eliminando el valor más alto. 
+El orden de los elementos puede modificarse.
+Por ejemplo, si se le proporciona la lista [1,2,15,7,2] debe devolver [1,2,7].
+
+Crea una función llamada promedio() que pueda recibir como argumento la lista devuelta por la anterior función, 
+y que calcule el promedio de los valores de la misma. Debe devolver el resultado, sin imprimirlo.
+"""
+'''
+def reducir_lista(lista):
+    # Eliminar duplicados convirtiendo la lista a un conjunto
+    lista_unica = list(set(lista))
+    # Encontrar el valor máximo
+    max_valor = max(lista_unica)
+    # Eliminar el valor máximo de la lista
+    lista_reducida = [x for x in lista_unica if x != max_valor]
+    return lista_reducida
+
+def promedio(lista):
+    if not lista:  # Evitar división por cero si la lista está vacía
+        return 0
+    return sum(lista) / len(lista)
+
+# Variable de ejemplo
+lista_numeros = [1, 2, 15, 7, 2]
+
+# Usar las funciones
+lista_reducida = reducir_lista(lista_numeros)
+resultado_promedio = promedio(lista_reducida)
+
+print("Lista original:", lista_numeros)
+print("Lista reducida:", lista_reducida)
+print("Promedio de la lista reducida:", resultado_promedio)'''
+
+#Ejercicio de codificacion
+"""
+Práctica sobre Interacción entre Funciones 3
+Crea una función (llamada lanzar_moneda) que devuelva el resultado de lanzar una moneda (al azar). 
+Dicha función debe poder devolver los resultados "Cara" o "Cruz", y no debe recibir argumentos para funcionar.
+Crea una segunda función (llamada probar_suerte), que tome dos argumentos: el primero, debe ser el resultado del lanzamiento de la moneda. 
+El segundo argumento, será una lista de números cualquiera (debes crear una lista con valores y llamarla lista_numeros).
+Si se le proporciona una "Cara", debe mostrar el mensaje al usuario: "La lista se autodestruirá", y eliminarla (devolverla como lista vacía []).
+Si se le proporciona una "Cruz", debe imprimir en pantalla: "La lista fue salvada" y devolver la lista intacta.
+Pistas: utiliza el método choice de la biblioteca random para elegir un elemento al azar de una secuencia.
+"""
+
+"""
+from random import choice
+def lanzar_moneda():
+    return choice(["Cara","Cruz"])
+
+def probar_suerte(resultado_moneda,lista_numeros):
+    if resultado_moneda=="Cara":
+        print("La lista se autodestruirá.")
+        return []
+    else:
+        print("La lista fue salvada")
+        return lista_numeros
+    
+lista_numeros = [1,42,123,13,45,4]
+"""
 
