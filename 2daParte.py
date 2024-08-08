@@ -439,17 +439,15 @@ def saludar_persona():
 saludar_persona()
 saludar_persona()
 
-
-
 #Return Leccion 62
 #Podemos retornar un valor para imprimir o bien almacenar en una variable
-
 def multiplicar(numero1, numero2):
     return numero1*numero2
 
 print(multiplicar(3,4))
 resultado = multiplicar(5,10)
 
+print("Nuevo cambio")
 
 
 
