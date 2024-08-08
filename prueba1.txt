@@ -1,0 +1,11 @@
+Soy el nuevo texto
+Soy la segunda linea
+yo la tercera con salto de linea usando diferente metodo al caracter de escape \n
+Unalistaescritaconmetodowritelines
+Una
+lista
+escrita
+con
+metodo
+writelines
+Bienvenido
