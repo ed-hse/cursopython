@@ -273,7 +273,7 @@ mi_archivo.close() #Es recomendable cerrarlo para no ocupar memoria
 # El metodo open open("archivo.txt","x") x {modo apertura} = r {solo lectura}, = w {solo escritura, se crea si no existe, y si existe se re
 # reseta, osea borra(sobreescribe) todas las lineas y posiciona cursor al inicio}, a = {solo escritura, se crea si no existe, y si existe posiciona el cursor 
 # hasta el final del archivo para escribir apartir de ahi, mantiene el contenido}
-
+"""
 archivo = open("prueba1.txt","w") #Solo lectura, al no encontrarlo va a crear uno
 archivo.write("Soy el nuevo texto\n") #Metodo para escribir, no permitira si se abrio modo lectura "r"
 archivo.write('''Soy la segunda linea
@@ -289,4 +289,5 @@ archivo = open("prueba1.txt","a")
 archivo.write("Bienvenido")
 archivo.close()
 
-
+"""
+# Directorios / Leccion 79
