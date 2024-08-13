@@ -576,7 +576,7 @@ resultado_promedio = promedio(lista_reducida)
 
 print("Lista original:", lista_numeros)
 print("Lista reducida:", lista_reducida)
-print("Promedio de la lista reducida:", resultado_promedio)'''
+print("Promedio de la lista reducida:", resultado_promedio)
 
 #Ejercicio de codificacion
 """
