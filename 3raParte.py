@@ -291,3 +291,41 @@ archivo.close()
 
 """
 # Directorios / Leccion 79
+# Breve introduccion: Como podemos abrir desde cualquier carpeta? Eso se vera en esta lección
+# En lugar de abrir el archivo con solo su nombre, agregamos la ruta, pero sera mejor usar path y os 
+# Esto logrará crear objetos de tipo directorio
+# Se pueden tener problemas para los separadores de directorios por ejemplo en windows tien \ este y en MAC / Pero con el objeto Path es posible con Pathlib
+import os
+from pathlib import Path #Es un objeto
+ruta = os.getcwd() #Obtiene el directorio de trabajo actual y devuelve un string
+print(type(ruta))
+print(ruta)
+
+#Os tiene mas comandos interesantes
+#chdir cambia el directorio actual de trabajo
+ruta = os.chdir("C:\\Users\\DELL\\Documents\\Proyectos Personales\\Udemy\PYTHON TOTAL\\Leccion79") # No guarda la ruta pero permite establecer otro directorio de trabajo
+print(ruta)# No guarda la ruta como se puede ver, solo modifica el directorio actual de trabajo
+archivo = open("otro_archivo.txt") #Ya se abre para otro directorio
+print(archivo) 
+print(archivo.read())
+#Asi es como cambiamos al directorio 
+#ruta=os.makedirs("C:\\Users\\DELL\\Documents\\Proyectos Personales\\Udemy\PYTHON TOTAL\\Leccion79\\otra") #Crea otra carpeta desde python
+#Una ruta puede tener dos elementos, el camino hasta la carpeta contenedora y el archivo, si tenemos una ruta compuesta, podemos obtener cada parte.
+ruta="C:\\Users\\DELL\\Documents\\Proyectos Personales\\Udemy\PYTHON TOTAL\\Leccion79\\prueba_otra.txt"
+elemento = os.path.basename(ruta) #Devuelve el archivo
+elemento = os.path.dirname(ruta) #Devuelve la ruta hasta la carpeta contenedora
+elemento = os.path.split(ruta) #Devuelve la tupla
+print(elemento)
+#Eliminar carpetas? 
+# os.rmdir("C:\\Users\\DELL\\Documents\\Proyectos Personales\\Udemy\PYTHON TOTAL\\Leccion79\\otra") #Remove Directory
+
+# Ahora vamos a usar el Path
+
+carpeta=Path("C:/Users/DELL/Documents/Proyectos Personales/Udemy/PYTHON TOTAL/Leccion79")
+archivo = carpeta / "otro_archivo.txt"
+mi_archivo = open(archivo)
+print(mi_archivo.read())
+
+
+#ruta = os.makedirs() #Para crear un directorio, incluso las carpetas de enmedio inexistentes, tambien puede agregarsele un archivo al final para crearlo
+
