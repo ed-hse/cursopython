@@ -438,12 +438,9 @@ def saludar_persona():
 
 saludar_persona()
 saludar_persona()
-'''
-
 
 #Return Leccion 62
 #Podemos retornar un valor para imprimir o bien almacenar en una variable
-"""
 def multiplicar(numero1, numero2):
     return numero1*numero2
 
@@ -451,6 +448,7 @@ print(multiplicar(3,4))
 resultado = multiplicar(5,10) #La funcion esta contemplada que tome valores integers y floats,
 #en un caso general: espera que el usuario introduzca el tipo de datos correcto
 
+print("Nuevo cambio")
 
 print("Prueba 05/08/2024 - 11 p.m.")
 
@@ -578,7 +576,7 @@ resultado_promedio = promedio(lista_reducida)
 
 print("Lista original:", lista_numeros)
 print("Lista reducida:", lista_reducida)
-print("Promedio de la lista reducida:", resultado_promedio)'''
+print("Promedio de la lista reducida:", resultado_promedio)
 
 #Ejercicio de codificacion
 """
