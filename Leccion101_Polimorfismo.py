@@ -25,6 +25,7 @@ oveja1=Oveja("Nube")
 
 animales = [vaca1,oveja1] 
 
+# Veremos la utilidad en la siguientes lineas: 
 for animal in animales:
     animal.hablar()
 
@@ -32,3 +33,5 @@ def animal_habla(animal):
     animal.hablar()
 
 animal_habla(oveja1)
+
+
