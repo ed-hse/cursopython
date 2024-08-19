@@ -295,6 +295,7 @@ archivo.close()
 # En lugar de abrir el archivo con solo su nombre, agregamos la ruta, pero sera mejor usar path y os 
 # Esto logrará crear objetos de tipo directorio
 # Se pueden tener problemas para los separadores de directorios por ejemplo en windows tien \ este y en MAC / Pero con el objeto Path es posible con Pathlib
+"""
 import os
 from pathlib import Path #Es un objeto
 ruta = os.getcwd() #Obtiene el directorio de trabajo actual y devuelve un string
@@ -324,8 +325,9 @@ print(elemento)
 carpeta=Path("C:/Users/DELL/Documents/Proyectos Personales/Udemy/PYTHON TOTAL/Leccion79")
 archivo = carpeta / "otro_archivo.txt"
 mi_archivo = open(archivo)
-print(mi_archivo.read())
+print(mi_archivo.read()) #Hemos podido acceder por medio de un directorio que no tiene el formato para windows mediante Path
 
 
 #ruta = os.makedirs() #Para crear un directorio, incluso las carpetas de enmedio inexistentes, tambien puede agregarsele un archivo al final para crearlo
 
+"""

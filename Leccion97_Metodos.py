@@ -39,7 +39,6 @@ class Mago:
 merlin = Mago()
 merlin.lanzar_hechizo()
 
-
 """
 Crea una instancia de la clase Alarma, que tenga un método llamado 
 postergar(cantidad_minutos). El método debe imprimir en pantalla el mensaje

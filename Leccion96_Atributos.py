@@ -3,7 +3,7 @@
 #Atributos de la instancia
 
 class Pajaro:
-    alas =True #Atributo de clase
+    alas =True #Atributo de clase, todos comparten el mismo valor de atributo
     def __init__(self,color): #Metodo constructor que asigna atributo, afuerzas en la instancia pedira un atributo a asignar
         self.color=color #Al atributo color le asignamos el valor de la variable color
 

@@ -7,7 +7,7 @@ def clear_terminal():
 nombre =input("DIme tu nombre: ")
 edad = input("DIme tu edad: ")
 
-#clear_terminal()
-print("\033c", end="")
+#clear_terminal() #Se puede limpiar con esta funcion hecha
+print("\033c", end="") #O tambien se puede limpiar de esta forma mas compacta 
 
 print(f"tu nombre es {nombre} y tienes {edad} años")
