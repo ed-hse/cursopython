@@ -1,5 +1,10 @@
 """
 Son aquellos que inician y terminan con __ 
+ejemplo: __init__
+        __mro__
+        __bases__
+        __subclases__
+Funcionalidades que no pueden ser representadas en metodos
 """
 
 class CD:
@@ -19,8 +24,8 @@ print(len(mi_cd))
 
 del mi_cd #Eliminar la instancia de la clase
 
+# Como usar aquellos metodos ya existentes en python para ciertas clases, 
+# aplicado ahora a mis clases que he creado
 
-        
 
-#Como usar aquellos metodos ya existentes en python para ciertas clases, aplicado ahora a mis clases que creo
 
